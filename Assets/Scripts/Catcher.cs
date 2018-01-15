@@ -67,7 +67,6 @@ public class Catcher : MonoBehaviour
 
     private void Slow()
     {
-        Debug.Log(rigidbody2d.velocity.magnitude);
         if(rigidbody2d.velocity.magnitude < .03f)
         {
             rigidbody2d.velocity = Vector2.zero;
