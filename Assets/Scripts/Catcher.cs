@@ -7,14 +7,14 @@ public class Catcher : MonoBehaviour
 
     private bool isDead = false;
     private Rigidbody2D rigidbody2d;
-    private PolygonCollider2D collider;
+    private PolygonCollider2D polygonCollider;
     private Animator animator;
 
 	// Use this for initialization
 	void Start ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        collider = GetComponent<PolygonCollider2D>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
 	}
 	
