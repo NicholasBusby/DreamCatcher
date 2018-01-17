@@ -10,7 +10,10 @@ public class AstronautPool : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-
+        for(int i = 0; i< Astronauts.Length; i++)
+        {
+            var a = Astronauts[i];
+        }
 	}
 	
 	// Update is called once per frame
@@ -18,7 +21,6 @@ public class AstronautPool : MonoBehaviour
     {
 		if(countdown == 0)
         {
-            Debug.Log(nextSpawnIndex);
             DropAstronaut(Astronauts[nextSpawnIndex]);
             nextSpawnIndex = (nextSpawnIndex + 1) % Astronauts.Count();
             countdown = (int)Mathf.Floor(Random.value * 1000);
@@ -31,7 +33,7 @@ public class AstronautPool : MonoBehaviour
 
     void DropAstronaut(AstronautScript astronaut)
     {
-        astronaut.enabled = true;
+        Instantiate(astronaut, new Vector3(0, 0, 0), Quaternion.identity);
         astronaut.Drop();
     }
 }
