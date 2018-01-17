@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212096506689303432}
   - component: {fileID: 50499007010401334}
   - component: {fileID: 60130322959671256}
+  - component: {fileID: 114332196286106230}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -120,6 +121,17 @@ PolygonCollider2D:
       - {x: 0.08, y: -0.34}
       - {x: 0.089999996, y: -0.35}
       - {x: 0.099999994, y: -0.34}
+--- !u!114 &114332196286106230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488064472600386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63ff4b18dd09804abd6880b942fc158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212096506689303432
 SpriteRenderer:
   m_ObjectHideFlags: 1
