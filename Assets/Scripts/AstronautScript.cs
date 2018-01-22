@@ -6,21 +6,24 @@ public class AstronautScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        Debug.Log("Astro Start");
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.position = new Vector3(rb2d.position.x, rb2d.position.y, 0);
+        Drop();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        var position = Camera.main.WorldToViewportPoint(rb2d.position);
+        if(position.y < 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     public void Drop()
     {
-        Debug.Log("Dropping");
-        enabled = true;
-        transform.position = new Vector3(0, 0, 0);
-        Debug.Log("position is" + transform.position);
+        rb2d.AddForce(new Vector2(0, (Random.value * -50) - 50));
+        rb2d.AddTorque(Random.value * 10);
     }
 }

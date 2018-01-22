@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Catcher : MonoBehaviour
 {
@@ -74,6 +75,14 @@ public class Catcher : MonoBehaviour
         else
         {
             rigidbody2d.velocity *= SlowDownRate;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name.StartsWith("Rescue", StringComparison.OrdinalIgnoreCase))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
