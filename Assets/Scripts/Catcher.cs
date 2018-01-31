@@ -64,6 +64,7 @@ public class Catcher : MonoBehaviour
     {
         animator.SetTrigger("Die");
         isDead = true;
+        GameControl.Instance.KillPlayer();
     }
 
     private void Slow()
@@ -80,9 +81,10 @@ public class Catcher : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name.StartsWith("Rescue", StringComparison.OrdinalIgnoreCase))
+        if(collision.gameObject.name.StartsWith("Rescue", StringComparison.OrdinalIgnoreCase) && !isDead)
         {
             Destroy(collision.gameObject);
+            GameControl.Instance.AddToScore();
         }
     }
 }
